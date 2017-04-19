@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="card">
+    <h1 class=""><%= @restaurant.name %></h1>
+    <ul class="">
+      <li class="">Address: <%= @restaurant.address %></li>
+      <li class="">Category: <%= @restaurant.category %></li>
+      <li class="">Phone Number: <%= @restaurant.phone_number %></li>
+    </ul>
+  </div>
+
+  <div class="reviews card">
+    <h2 class="card-title">Add a new review</h2>
+    <%= render 'new_review' %>
+  </div>
+  <div class="add-review card">
+    <ul>
+    <% @restaurant.reviews.each do |review| %>
+      <li>Rating: <%= review.rating %></li>
+      <li>Review: <%= review.content %></li>
+    <% end %>
+
+    </ul>
+  </div>
+</div>
